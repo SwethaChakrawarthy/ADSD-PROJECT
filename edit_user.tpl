@@ -1,0 +1,53 @@
+<!-- views/edit_user.tpl -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center; /* Center-align content */
+            background: linear-gradient(to bottom, #001F3F, #003366); /* Navy blue gradient */
+            color: #fff; /* Set text color to white or another color for contrast */
+        }
+
+        h1 {
+            color: #fff; /* Set heading color to white or another color for contrast */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff; /* Set label color to white or another color for contrast */
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            margin-right: 10px;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <h1>Edit User</h1>
+    <form action="/update_user/{{user[0]}}" method="post">
+        <label for="new_username">New Username:</label>
+        <input type="text" id="new_username" name="new_username" value="{{user[2]}}" required>
+        <input type="hidden" name="app_id" value="{{user[1]}}">
+        <input type="submit" value="Update User">
+    </form>
+    <p><a href="/app/{{user[1]}}">Cancel</a></p>
+</body>
+</html>
